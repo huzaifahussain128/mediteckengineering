@@ -1,255 +1,118 @@
-# 🎉 Medi Teck Engineering - Full-Stack Integration Complete!
+# 🎉 Medi Teck Engineering - Static Website & Deployment Guide
 
-## ✅ What's Been Implemented
+Welcome to the pure static version of the **Medi Teck Engineering** website. This project has been converted into a 100% client-side, high-performance static frontend site. All database integrations, administration dashboards, server-side APIs, and tracking analytics have been completely removed. The site now loads and runs purely on HTML, CSS, JavaScript, and static local data.
 
-### 1. **Supabase Backend Integration** ✓
-- ✅ Supabase client configured for browser
-- ✅ Contact form connected to database
-- ✅ Real-time lead submission
-- ✅ Form validation and error handling
-- ✅ Success/error status messages
-
-### 2. **Database Setup** ✓
-- ✅ `leads` table schema created
-- ✅ Row Level Security (RLS) policies
-- ✅ Indexes for performance
-- ✅ SQL setup script provided
-
-### 3. **Admin Panel** ✓
-- ✅ Protected route: `/mt-admin.html`
-- ✅ Password-protected login
-- ✅ Dashboard with statistics
-- ✅ Searchable leads table
-- ✅ Mark as contacted functionality
-- ✅ Delete leads functionality
-- ✅ Real-time data refresh
-
-### 4. **Security Features** ✓
-- ✅ Environment variables (.env)
-- ✅ Row Level Security on Supabase
-- ✅ Admin password protection
-- ✅ Session-based authentication
-- ✅ .gitignore for sensitive files
-
-### 5. **Deployment Ready** ✓
-- ✅ vercel.json configuration
-- ✅ package.json with dependencies
-- ✅ .gitignore configured
-- ✅ Git repository initialized
-- ✅ Deployment checklist provided
+The design, spacing, typography, colors, animations, and layouts are **100% identical** to the previous version, preserving the premium visual aesthetic while eliminating backend hosting costs and security overhead.
 
 ---
 
-## 📁 Project Structure
+## 📁 Cleaned Folder Structure
+
+Below is the simplified folder structure of the static website:
 
 ```
-medi-teck-engineering/
-├── 📄 Frontend Files
-│   ├── index.html                    # Main website
-│   ├── products.html                 # Products page
-│   ├── mt-admin.html                 # Admin panel ⭐ NEW
-│   ├── styles.css                    # Stylesheet
-│   ├── script.js                     # Main JavaScript (updated)
-│   └── products.js                   # Products functionality
-│
-├── 🔧 Backend Integration
-│   ├── supabase-client-browser.js    # Supabase client ⭐ NEW
-│   ├── supabase-client.js            # Node.js version
-│   ├── env-config.js                 # Environment config ⭐ NEW
-│   └── supabase-setup.sql            # Database setup ⭐ NEW
-│
-├── 📦 Configuration
-│   ├── package.json                  # Dependencies
-│   ├── vercel.json                   # Vercel config ⭐ NEW
-│   ├── .gitignore                    # Git ignore ⭐ NEW
-│   ├── .env                          # Local env (not committed)
-│   └── .env.example                  # Example template
-│
-└── 📚 Documentation
-    ├── SETUP_GUIDE.md                # Complete setup guide ⭐ NEW
-    ├── DEPLOYMENT_CHECKLIST.md       # Step-by-step checklist ⭐ NEW
-    ├── IMAGE_REPLACEMENT_GUIDE.md    # Image guide
-    └── README.md                     # This file
+mediteckengineering-main/
+├── .cpanel.yml                   # cPanel automatic deployment configuration
+├── .gitignore                    # Git ignore settings
+├── .htaccess                     # Apache static server redirect/caching rules
+├── about.html                    # Public "About Us" page
+├── contact.html                  # Public "Contact Us" page (inert visual form)
+├── generate-details.ps1          # Automated PowerShell physical details generator
+├── IMAGE_REPLACEMENT_GUIDE.md     # Guide for updating images locally
+├── index.html                    # Homepage
+├── meditec_logo.png              # Site branding logo
+├── package.json                  # Lightweight npm settings for local dev
+├── products-data.js              # Local static product database (28 items)
+├── products.html                 # Public "Products" page
+├── products.js                   # Static filtering and rendering logic
+├── products/                     # Directory with 28 generated HTML detail pages
+│   ├── agss-system.html
+│   ├── air-compressor-plant.html
+│   ├── bed-head-units.html
+│   ├── central-copper-pipeline-system.html
+│   ├── double-arm-pendant.html
+│   ├── humidifier-bottle.html
+│   ├── multi-gas-alarm-digital.html
+│   ├── multi-level-area-valve-service-unit.html
+│   ├── multi-stage-regulator.html
+│   ├── nitrous-manifold-system-automatic.html
+│   ├── nitrous-manifold-system-manual.html
+│   ├── oxygen-cylinder-regulator.html
+│   ├── oxygen-flowmeter.html
+│   ├── oxygen-generation-plant.html
+│   ├── oxygen-manifold-system-automatic.html
+│   ├── oxygen-manifold-system-manual.html
+│   ├── rigid-pendant.html
+│   ├── silicone-tube.html
+│   ├── single-arm-pendant.html
+│   ├── single-gas-alarm-digital.html
+│   ├── single-gas-alarm-simple.html
+│   ├── single-stage-regulator.html
+│   ├── suction-injector.html
+│   ├── suction-jar.html
+│   ├── touch-screen-alarm-premium.html
+│   ├── vacuum-controller.html
+│   └── vacuum-plant.html
+├── README.md                     # This documentation file
+├── script.js                     # Core frontend scripting (navigation, animations)
+├── services.html                 # Public "Services" page
+├── styles.css                    # Shared premium design system stylesheet
+└── vercel.json                   # Route rewrites for clean URL static hosting
 ```
 
 ---
 
-## 🚀 Quick Start Guide
+## ⚡ Technical Implementations & Refactors
 
-### Step 1: Setup Supabase (10 minutes)
-1. Create account at https://supabase.com
-2. Create new project
-3. Open SQL Editor
-4. Copy & run content from `supabase-setup.sql`
-5. Copy Project URL and anon key
+1. **Complete Product Hierarchy Database (`products-data.js`):**
+   Stores all **28 distinct medical gas and pipeline accessory products** categorized under:
+   - **Medical Gases System** (`medical-gases-system`)
+   - **Medical Gases Primary & Secondary Accessories** (`primary-secondary-accessories`)
 
-### Step 2: Update Environment (2 minutes)
-1. Open `env-config.js`
-2. Replace:
-   ```javascript
-   SUPABASE_URL: 'https://your-project.supabase.co'
-   SUPABASE_ANON_KEY: 'your-key-here'
-   ADMIN_PASSWORD: 'your-secure-password'
-   ```
+2. **High-Fidelity Product Filtering (`products.js`):**
+   Renders the 28 products dynamically in a grid with category filters, subcategory badges (e.g. *Manifold System*, *Alarm Systems*), and links to dedicated static pages.
 
-### Step 3: Test Locally (5 minutes)
-```bash
-npm install
-npm run dev
-```
-- Visit: http://localhost:3000
-- Test contact form
-- Check admin panel: http://localhost:3000/mt-admin.html
+3. **Automated Detail Pages (`generate-details.ps1`):**
+   A native PowerShell script that compiles `products-data.js` and outputs **28 physical HTML detail pages** in the `/products/` folder with proper layouts, spec sheets, and WhatsApp inquiry buttons.
 
-### Step 4: Deploy to Vercel (15 minutes)
-1. Push to GitHub
-2. Import to Vercel
-3. Add environment variables
-4. Deploy!
-
-📋 **See `DEPLOYMENT_CHECKLIST.md` for detailed steps**
+4. **Inert Contact Form (`contact.html` & `script.js`):**
+   Removed all serverless/database API submission handlers. The form remains as a visual UI element, disabled by default, showing a polite informational alert stating that the form is visually disabled.
 
 ---
 
-## 🔑 Key Features
+## 🌐 cPanel Git Version Control & Deployment
 
-### Contact Form
-- ✅ Submits to Supabase database
-- ✅ Email validation
-- ✅ Loading states
-- ✅ Success/error messages
-- ✅ Auto-reset after submission
+To link this GitHub repository to your cPanel hosting and deploy it live to **`mtengineering.com.pk`**, follow these simple steps:
 
-### Admin Panel
-- ✅ **Login Protection:** Password required
-- ✅ **Dashboard Stats:** Total, New, Contacted, Follow-up
-- ✅ **Search:** Filter by name, email, phone
-- ✅ **Status Management:** Mark as contacted
-- ✅ **Delete:** Remove spam/old leads
-- ✅ **Refresh:** Reload data anytime
+### Step 1: Add/Clone Repository in cPanel
+1. Log in to your **cPanel** dashboard.
+2. Search for **Git** and click on **Git™ Version Control** (under the "Files" section).
+3. Click the blue **Create** button on the right.
+4. Fill in the repository details:
+   - **Clone URL:** `https://github.com/huzaifahussain128/mediteckengineering.git`
+   - **Repository Path:** Set this to where cPanel will store the Git files, e.g., `repositories/mediteckengineering` (do not clone directly to `public_html` since Git requires an empty directory).
+   - **Repository Name:** `mediteckengineering`
+5. Click **Create** to let cPanel clone the repository.
 
-### Database Schema
-```sql
-leads table:
-- id (auto-increment)
-- created_at (timestamp)
-- full_name (text)
-- email (text)
-- phone_number (text)
-- subject (text)
-- message (text)
-- status (new/contacted/follow-up)
-```
+### Step 2: Configure `.cpanel.yml` path (Optional but Recommended)
+We have pre-configured a `.cpanel.yml` file in the root of the repository. It instructs cPanel to automatically copy all files to `/home/mtengineering/public_html` (the standard web root directory) using `rsync` while excluding Git logs, `node_modules`, and package scripts.
+- **Note:** If your cPanel home folder username is not `mtengineering` (e.g. it is `/home/mtengine/` or similar), simply edit the first line of the `.cpanel.yml` file in your repository:
+  ```yaml
+  - export DEPLOYPATH=/home/YOUR_CPANEL_USERNAME/public_html
+  ```
 
----
+### Step 3: Trigger Live Deployment
+1. In cPanel **Git™ Version Control**, click **Manage** next to the `mediteckengineering` repository.
+2. Select the **Pull or Deploy** tab.
+3. Click **Update from Remote** to pull any new commits from GitHub.
+4. Click **Deploy Head Commit** at the bottom of the page.
+5. cPanel will run the `.cpanel.yml` script and copy all static HTML, CSS, JavaScript, and product pages straight to your website's root folder.
 
-## 🔐 Security Checklist
-
-Before deploying to production:
-
-- [ ] Change default admin password in `env-config.js`
-- [ ] Set strong password in Vercel environment variables
-- [ ] Verify Supabase RLS policies are active
-- [ ] Test that `.env` is NOT committed to Git
-- [ ] Make GitHub repository private (recommended)
-- [ ] Enable HTTPS on Vercel (automatic)
+Your website will be live on **`mtengineering.com.pk`** instantly!
 
 ---
 
-## 📊 How It Works
-
-### Contact Form Flow:
-```
-User fills form → Validation → Supabase Insert → Success Message
-```
-
-### Admin Panel Flow:
-```
-Login → Session Check → Fetch Leads → Display Dashboard
-```
-
-### Security Flow:
-```
-Contact Form: Public insert access (RLS policy)
-Admin Panel: Authenticated access only (password + RLS)
-```
-
----
-
-## 🎯 Next Steps
-
-### Immediate:
-1. Setup Supabase database
-2. Update environment variables
-3. Test locally
-4. Deploy to Vercel
-
-### Optional Enhancements:
-- [ ] Add email notifications for new leads
-- [ ] Implement reCAPTCHA on contact form
-- [ ] Add export to CSV functionality
-- [ ] Create email templates for responses
-- [ ] Add analytics dashboard
-- [ ] Implement Supabase Email Auth
-- [ ] Add lead notes/comments
-- [ ] Create automated follow-up reminders
-
----
-
-## 🆘 Support & Documentation
-
-### Files to Read:
-- **SETUP_GUIDE.md** - Detailed setup instructions
-- **DEPLOYMENT_CHECKLIST.md** - Step-by-step deployment
-- **supabase-setup.sql** - Database setup script
-
-### Useful Links:
-- Supabase Docs: https://supabase.com/docs
-- Vercel Docs: https://vercel.com/docs
-- Supabase Dashboard: https://app.supabase.com
-- Vercel Dashboard: https://vercel.com/dashboard
-
----
-
-## 💡 Tips
-
-### For Local Development:
-- Use `npm run dev` to start server
-- Changes reflect immediately
-- Check browser console for errors
-- Test with real submissions
-
-### For Production:
-- Always test locally first
-- Use strong passwords
-- Monitor Supabase logs
-- Backup data regularly
-- Check Vercel deployment logs
-
----
-
-## 📞 Contact Form Data
-
-All form submissions are stored in Supabase and can be:
-- Viewed in admin panel
-- Exported from Supabase Table Editor
-- Accessed via Supabase API
-- Downloaded as CSV/JSON
-
----
-
-## 🎊 Congratulations!
-
-Your Medi Teck Engineering website is now a **full-stack application** with:
-- ✅ Professional frontend
-- ✅ Database backend
-- ✅ Admin dashboard
-- ✅ Deployment ready
-
-**Ready to go live! 🚀**
-
----
-
-**Version:** 1.0.0  
-**Last Updated:** 2026  
-**Status:** Production Ready ✅
+## 💡 Local Testing
+To preview your new static site locally:
+1. Simply browse to **[http://localhost:3000/](http://localhost:3000/)** (your custom PowerShell server is currently active in the background and serving the entire static catalog).
+2. Click on any product's **View Details** button on the Products page or the Home page, and you will see the generated SEO-friendly detail page load instantly!
