@@ -95,8 +95,8 @@ To link this GitHub repository to your cPanel hosting and deploy it live to **`m
 5. Click **Create** to let cPanel clone the repository.
 
 ### Step 2: Configure `.cpanel.yml` path (Optional but Recommended)
-We have pre-configured a `.cpanel.yml` file in the root of the repository. It instructs cPanel to automatically copy all files to `/home/mtengineering/public_html` (the standard web root directory) using `rsync` while excluding Git logs, `node_modules`, and package scripts.
-- **Note:** If your cPanel home folder username is not `mtengineering` (e.g. it is `/home/mtengine/` or similar), simply edit the first line of the `.cpanel.yml` file in your repository:
+We have pre-configured a `.cpanel.yml` file in the root of the repository. It instructs cPanel to automatically copy all files to `/home/mtengine/public_html` (the standard web root directory) using `rsync` while excluding Git logs, `node_modules`, and package scripts.
+- **Note:** If your cPanel home folder username is not `mtengine` (e.g. it is `/home/mtengine/` or similar), simply edit the first line of the `.cpanel.yml` file in your repository:
   ```yaml
   - export DEPLOYPATH=/home/YOUR_CPANEL_USERNAME/public_html
   ```
