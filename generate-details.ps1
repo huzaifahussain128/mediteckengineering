@@ -58,7 +58,7 @@ $products = @(
         subcategory = "Central Medical Gas Plants"
         description = "On-site Pressure Swing Adsorption (PSA) oxygen generation plant. Produces high-purity medical oxygen from compressed ambient air."
         image_url = "https://images.unsplash.com/photo-1616391182219-e080b4d1043a?w=800&h=600&fit=crop"
-        features = @("93% ± 3% purity output", "Energy efficient operation", "PLC automated controls", "Integrated purity analyzer")
+        features = @("93% &plusmn; 3% purity output", "Energy efficient operation", "PLC automated controls", "Integrated purity analyzer")
     },
     @{
         slug = "air-compressor-plant"
