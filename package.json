@@ -1,0 +1,22 @@
+{
+  "name": "medi-teck-engineering",
+  "version": "1.0.0",
+  "description": "Medi Teck Engineering - Professional Medical Engineering Solutions",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=3000",
+    "build": "echo 'Static site - no build required'",
+    "start": "live-server --port=3000"
+  },
+  "keywords": [
+    "medical",
+    "engineering",
+    "healthcare",
+    "static-site"
+  ],
+  "author": "Medi Teck Engineering",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Medi Teck Engineering | Leading Medical Engineering Solutions</title>
+    <meta name="description" content="Learn about Medi Teck Engineering - Pakistan's premier provider of medical gas pipelines, oxygen generation plants, and healthcare infrastructure solutions.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* About Page Specific Styles */
+        .about-hero {
+            background: linear-gradient(135deg, rgba(45, 137, 199, 0.9) 0%, rgba(26, 107, 163, 0.9) 100%),
+                        url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=1920&h=800&fit=crop') center/cover no-repeat;
+            padding: 8rem 0 5rem;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .about-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-hero p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .story-content h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+        }
+
+        .story-content h2 span {
+            color: #2D89C7;
+        }
+
+        .story-content p {
+            color: #64748b;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .story-image {
+            position: relative;
+        }
+
+        .story-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .story-image-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: linear-gradient(135deg, #2D89C7 0%, #1a6ba3 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(45, 137, 199, 0.4);
+            transform: perspective(500px) rotateY(-5deg);
+            transition: all 0.4s ease;
+        }
+
+        .story-image-badge:hover {
+            transform: perspective(500px) rotateY(0deg) scale(1.05);
+        }
+
+        .story-image-badge .number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+        }
+
+        .story-image-badge .label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        /* Values Section */
+        .values-section {
+            padding: 5rem 0;
+            background: #f8fafc;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: #64748b;
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #2D89C7 0%, #1a6ba3 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 8px 20px rgba(45, 137, 199, 0.4);
+            transition: all 0.4s ease;
+            transform: perspective(500px) rotateX(0deg);
+        }
+
+        .value-card:hover .value-icon {
+            transform: perspective(500px) rotateX(360deg) scale(1.1);
+            box-shadow: 0 12px 30px rgba(45, 137, 199, 0.6);
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .value-card p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .team-image {
+            height: 300px;
+            background: linear-gradient(135deg, #2D89C7 0%, #1a6ba3 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-image::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate3d 8s linear infinite;
+        }
+
+        @keyframes rotate3d {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .team-image i {
+            font-size: 6rem;
+            color: white;
+            opacity: 0.3;
+        }
+
+        .team-info {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .team-info h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-role {
+            color: #2D89C7;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .team-info p {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .team-contact {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .team-contact a {
+            width: 40px;
+            height: 40px;
+            background: #f1f5f9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2D89C7;
+            text-decoration: none;
+            transition: all 0.3s;
+            transform: perspective(500px) translateZ(0);
+        }
+
+        .team-contact a:hover {
+            background: #2D89C7;
+            color: white;
+            transform: perspective(500px) translateZ(20px) scale(1.15);
+            box-shadow: 0 8px 20px rgba(45, 137, 199, 0.4);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, rgba(45, 137, 199, 0.95) 0%, rgba(26, 107, 163, 0.95) 100%),
+                        url('https://images.unsplash.com/photo-1504439468489-c8920d726585?w=1920&h=600&fit=crop') center/cover no-repeat;
+            color: white;
+            position: relative;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-item .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .stat-item .stat-label {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        /* Services Overview */
+        .services-overview {
+            padding: 5rem 0;
+            background: #f8fafc;
+        }
+
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .service-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        .service-item-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2D89C7 0%, #1a6ba3 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(45, 137, 199, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .service-item:hover .service-item-icon {
+            transform: perspective(500px) rotateY(180deg);
+            box-shadow: 0 8px 20px rgba(45, 137, 199, 0.5);
+        }
+
+        .service-item-content h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-item-content p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .about-cta {
+            padding: 5rem 0;
+            background: white;
+            text-align: center;
+        }
+
+        .about-cta h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .about-cta p {
+            color: #64748b;
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #2D89C7 0%, #1a6ba3 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 15px rgba(45, 137, 199, 0.3);
+            transform: perspective(500px) translateZ(0);
+        }
+
+        .btn-primary:hover {
+            transform: perspective(500px) translateZ(30px) translateY(-3px);
+            box-shadow: 0 8px 25px rgba(45, 137, 199, 0.5);
+        }
+
+        .btn-secondary {
+            padding: 1rem 2rem;
+            background: white;
+            color: #2D89C7;
+            border: 2px solid #2D89C7;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transform: perspective(500px) translateZ(0);
+        }
+
+        .btn-secondary:hover {
+            background: #2D89C7;
+            color: white;
+            transform: perspective(500px) translateZ(20px);
+            box-shadow: 0 8px 20px rgba(45, 137, 199, 0.4);
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 3rem auto 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: #e2e8f0;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #2D89C7;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-content p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: #2D89C7;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 2px #2D89C7, 0 0 15px rgba(45, 137, 199, 0.5);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.2); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .story-image-badge {
+                right: 20px;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(odd) {
+                flex-direction: row;
+                padding-left: 70px;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .timeline-dot {
+                left: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-hero p {
+                font-size: 1rem;
+            }
+
+            .section-header h2,
+            .story-content h2,
+            .about-cta h2 {
+                font-size: 1.75rem;
+            }
+
+            .stat-item .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="meditec_logo.png" alt="MT Engineering Logo">
+                    <span class="logo-text">MT Engineering</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="about.html" class="nav-link active">About Us</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <h1><i class="fas fa-building"></i> About Medi Teck Engineering</h1>
+            <p>Pakistan's leading provider of innovative medical engineering solutions, transforming healthcare infrastructure with cutting-edge technology and unmatched expertise.</p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-content">
+                    <h2>Our <span>Story</span></h2>
+                    <p>Medi Teck Engineering was founded by <strong>Habib Hussain</strong> with a vision to revolutionize healthcare infrastructure in Pakistan. Recognizing the critical need for world-class medical engineering solutions, he established the company to provide cutting-edge technology that meets international standards while being accessible to healthcare facilities across the country.</p>
+                    <p>Under the visionary leadership of Habib Hussain, and with Muhammad Waqas leading technical operations, we have grown from our humble beginnings in Karachi to become a trusted partner for hospitals, clinics, and healthcare institutions nationwide. Our journey is driven by a commitment to excellence, innovation, and the belief that every patient deserves access to state-of-the-art medical facilities.</p>
+                    <p>Today, we stand as pioneers in medical gas pipeline systems, oxygen generation plants, modular operation theaters, and comprehensive healthcare infrastructure solutions. Our team of expert engineers and technicians work tirelessly to deliver solutions that save lives and improve patient care.</p>
+                </div>
+                <div class="story-image">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&h=600&fit=crop" alt="Medical Facility">
+                    <div class="story-image-badge">
+                        <span class="number">10+</span>
+                        <span class="label">Years of Excellence</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Values -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Mission & Values</h2>
+                <p>We are guided by core principles that drive everything we do</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To provide world-class medical engineering solutions that enhance healthcare delivery, improve patient outcomes, and set new standards of excellence in Pakistan's healthcare infrastructure.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To be the leading medical engineering company in South Asia, recognized for innovation, quality, and our commitment to transforming healthcare facilities with cutting-edge technology.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Quality First</h3>
+                    <p>We never compromise on quality. Every product we manufacture and every system we install meets international standards and undergoes rigorous quality assurance testing.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>We continuously invest in research and development to bring the latest technological advancements to Pakistan's healthcare sector, ensuring our clients stay ahead.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Customer Commitment</h3>
+                    <p>Our relationship with clients doesn't end at installation. We provide comprehensive after-sales support, maintenance, and training to ensure long-term success.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Safety Standards</h3>
+                    <p>Patient and staff safety is paramount. All our systems are designed and installed following strict international safety protocols and healthcare regulations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">200+</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Expert Team Members</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Leadership Team</h2>
+                <p>Meet the experts driving our success</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-image">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="team-info">
+                        <h3>Habib Hussain</h3>
+                        <span class="team-role">Founder & CEO</span>
+                        <p>Visionary leader and founder of Medi Teck Engineering, Habib Hussain has been instrumental in transforming healthcare infrastructure across Pakistan. With his strategic vision and commitment to excellence, he has built the company into a trusted name in medical engineering solutions.</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="team-info">
+                        <h3>Muhammad Waqas</h3>
+                        <span class="team-role">General Manager</span>
+                        <p>With over 10 years of experience in medical engineering, Muhammad Waqas leads our technical operations with expertise in project management and quality assurance. He ensures every project meets the highest standards of excellence.</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="team-info">
+                        <h3>Expert Engineering Team</h3>
+                        <span class="team-role">Technical Department</span>
+                        <p>Our team of 50+ certified engineers and technicians brings specialized expertise in medical gas systems, HVAC, electrical systems, and healthcare infrastructure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do -->
+    <section class="services-overview">
+        <div class="container">
+            <div class="section-header">
+                <h2>What We Do</h2>
+                <p>Comprehensive medical engineering solutions for healthcare facilities</p>
+            </div>
+            <div class="services-list">
+                <div class="service-item">
+                    <div class="service-item-icon">
+                        <i class="fas fa-gas-pump"></i>
+                    </div>
+                    <div class="service-item-content">
+                        <h3>Medical Gas Pipeline Systems</h3>
+                        <p>Design, installation, and maintenance of complete medical gas infrastructure including oxygen, nitrous oxide, medical air, and vacuum systems.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-item-icon">
+                        <i class="fas fa-lungs"></i>
+                    </div>
+                    <div class="service-item-content">
+                        <h3>Oxygen Generation Plants</h3>
+                        <p>PSA-based oxygen generation systems providing continuous, cost-effective medical oxygen supply for hospitals and healthcare facilities.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-item-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <div class="service-item-content">
+                        <h3>Modular Operation Theaters</h3>
+                        <p>State-of-the-art modular OTs with HEPA filtration, laminar air flow, antibacterial panels, and integrated control systems.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-item-icon">
+                        <i class="fas fa-fan"></i>
+                    </div>
+                    <div class="service-item-content">
+                        <h3>Air Compressor & Vacuum Systems</h3>
+                        <p>Oil-free air compressors and central vacuum systems designed for medical applications with automatic controls and backup systems.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-item-icon">
+                        <i class="fas fa-arrows-alt"></i>
+                    </div>
+                    <div class="service-item-content">
+                        <h3>ICU & OT Ceiling Pendants</h3>
+                        <p>Single and double arm ceiling pendants with gas outlets, electrical sockets, and equipment mounting for ICUs and operation theaters.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-item-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="service-item-content">
+                        <h3>Custom Medical Equipment</h3>
+                        <p>Design and manufacturing of customized stainless steel medical equipment, trolleys, and healthcare furniture tailored to your needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Medi Teck Engineering?</h2>
+                <p>What sets us apart from the competition</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Certified Quality</h3>
+                    <p>All our products and installations meet ISO standards and international healthcare regulations. Quality certified and tested.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>On-Time Delivery</h3>
+                    <p>We understand the critical nature of healthcare projects. Our track record shows 95%+ on-time project completion.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Competitive Pricing</h3>
+                    <p>World-class quality at competitive prices. We offer the best value for your investment without compromising on standards.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-life-ring"></i>
+                    </div>
+                    <h3>Lifetime Support</h3>
+                    <p>Our commitment doesn't end at installation. We provide lifetime maintenance support and technical assistance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="about-cta">
+        <div class="container">
+            <h2>Ready to Transform Your Healthcare Facility?</h2>
+            <p>Let's discuss how we can help you build world-class medical infrastructure. Get a free consultation today.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn-primary">
+                    <i class="fas fa-envelope"></i> Contact Us Now
+                </a>
+                <a href="products.html" class="btn-secondary">
+                    <i class="fas fa-box"></i> View Our Products
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">MT Engineering</span>
+                    <p>Professional Medical Engineering Solutions</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/923212999899" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Medi Teck Engineering. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Vercel Analytics -->
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+
+    <!-- Vercel Speed Insights -->
+    <script>
+        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+
+    <script src="script.js"></script>
+
+    <!-- Scroll to Top Functionality -->
+    <script>
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

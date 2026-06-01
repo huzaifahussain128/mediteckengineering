@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Medi Teck Engineering</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="meditec_logo.png" alt="MT Engineering Logo">
+                    <span class="logo-text">MT Engineering</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="products.html" class="nav-link active">Products</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Products Hero Section -->
+    <section class="products-hero" style="background: linear-gradient(135deg, rgba(45, 137, 199, 0.9) 0%, rgba(26, 107, 163, 0.9) 100%), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&h=800&fit=crop') center/cover no-repeat; padding: 8rem 0; color: white; text-align: center; position: relative;">
+        <div class="container" style="position: relative; z-index: 1;">
+            <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 1rem;">Our Products</h1>
+            <p style="font-size: 1.25rem; opacity: 0.95; max-width: 600px; margin: 0 auto;">Premium Medical Engineering Equipment & Solutions for Healthcare Facilities</p>
+        </div>
+    </section>
+
+    <!-- Products Filter -->
+    <section class="products-filter" style="background: white; padding: 2rem 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100;">
+        <div class="container">
+            <div class="filter-buttons" id="filterButtons" style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+                <button class="filter-btn active" data-filter="all" style="padding: 0.75rem 1.5rem; border: 2px solid #2D89C7; background: #2D89C7; color: white; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s;">All Products</button>
+                <!-- Categories will be loaded dynamically from database -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section" style="padding: 4rem 0; background: #f8fafc;">
+        <div class="container">
+            <div class="products-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem;">
+                <!-- Products will be loaded dynamically from Supabase database -->
+                <div style="grid-column: 1/-1; text-align: center; padding: 4rem;">
+                    <i class="fas fa-spinner fa-spin" style="font-size: 3rem; color: #2D89C7;"></i>
+                    <p style="margin-top: 1rem; color: #64748b;">Loading products...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="products-cta">
+        <div class="container">
+            <h2>Need a Custom Product?</h2>
+            <p>We specialize in manufacturing customized medical engineering solutions tailored to your requirements.</p>
+            <a href="index.html#contact" class="cta-button">Contact Us Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">MT Engineering</span>
+                    <p>Professional Medical Engineering Solutions</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Medi Teck Engineering. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Static Products Data -->
+    <script src="products-data.js"></script>
+
+    <script src="script.js"></script>
+    <script src="products.js"></script>
+</body>
+</html>

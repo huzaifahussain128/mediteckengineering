@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Medi Teck Engineering | Medical Engineering Solutions</title>
+    <meta name="description" content="Explore our comprehensive medical engineering services including medical gas pipelines, oxygen generation plants, modular OTs, and healthcare infrastructure solutions.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Services Page Specific Styles */
+        .services-hero {
+            background: linear-gradient(135deg, rgba(45, 137, 199, 0.9) 0%, rgba(26, 107, 163, 0.9) 100%),
+                        url('https://images.unsplash.com/photo-1551076805-e1869033e561?w=1920&h=800&fit=crop') center/cover no-repeat;
+            padding: 8rem 0 5rem;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .services-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .services-hero p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Services Overview */
+        .services-overview {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: #64748b;
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Services Grid */
+        .main-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .main-service-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .main-service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-card-header {
+            background: linear-gradient(135deg, #2D89C7 0%, #1a6ba3 100%);
+            padding: 2.5rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            transform: perspective(500px) translateZ(0);
+            transition: all 0.4s ease;
+        }
+
+        .service-card-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .main-service-card:hover .service-card-header {
+            transform: perspective(500px) translateZ(30px);
+        }
+
+        .service-card-header i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .service-card-header h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card-header p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .service-card-body {
+            padding: 2.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+        }
+
+        .service-features li {
+            padding: 0.75rem 0;
+            color: #64748b;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+
+        .service-features li i {
+            color: #10b981;
+            font-size: 1.25rem;
+            margin-top: 0.2rem;
+        }
+
+        .service-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #2D89C7 0%, #1a6ba3 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(45, 137, 199, 0.3);
+            transform: perspective(500px) translateZ(0);
+        }
+
+        .service-btn:hover {
+            transform: perspective(500px) translateZ(20px) translateY(-2px);
+            box-shadow: 0 8px 25px rgba(45, 137, 199, 0.5);
+        }
+
+        /* Additional Services */
+        .additional-services {
+            padding: 5rem 0;
+            background: #f8fafc;
+        }
+
+        .additional-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .additional-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .additional-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .additional-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #2D89C7 0%, #1a6ba3 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 8px 20px rgba(45, 137, 199, 0.4);
+            transition: all 0.4s ease;
+            transform: perspective(500px) rotateX(0deg);
+        }
+
+        .additional-card:hover .additional-icon {
+            transform: perspective(500px) rotateX(360deg) scale(1.15);
+            box-shadow: 0 12px 30px rgba(45, 137, 199, 0.6);
+        }
+
+        .additional-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .additional-card p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2D89C7 0%, #1a6ba3 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 4px 15px rgba(45, 137, 199, 0.4);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .process-step h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .process-step p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            background: linear-gradient(135deg, rgba(45, 137, 199, 0.95) 0%, rgba(26, 107, 163, 0.95) 100%),
+                        url('https://images.unsplash.com/photo-1551190822-a9ce113ac100?w=1920&h=800&fit=crop') center/cover no-repeat;
+            padding: 6rem 0;
+            color: white;
+            position: relative;
+        }
+
+        .why-choose .section-header h2 {
+            color: white;
+        }
+
+        .why-choose .section-header p {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s;
+        }
+
+        .benefit-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-8px);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Industries Served */
+        .industries {
+            padding: 5rem 0;
+            background: #f8fafc;
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .industry-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .industry-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        .industry-item i {
+            font-size: 3rem;
+            color: #2D89C7;
+            margin-bottom: 1rem;
+            display: block;
+            transition: all 0.4s ease;
+            transform: perspective(500px) translateZ(0);
+        }
+
+        .industry-item:hover i {
+            transform: perspective(500px) translateZ(30px) scale(1.2);
+            filter: drop-shadow(0 8px 15px rgba(45, 137, 199, 0.5));
+        }
+
+        .industry-item h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        /* CTA Section */
+        .services-cta {
+            padding: 5rem 0;
+            background: white;
+            text-align: center;
+        }
+
+        .services-cta h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .services-cta p {
+            color: #64748b;
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #2D89C7 0%, #1a6ba3 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 15px rgba(45, 137, 199, 0.3);
+            transform: perspective(500px) translateZ(0);
+        }
+
+        .btn-primary:hover {
+            transform: perspective(500px) translateZ(30px) translateY(-3px);
+            box-shadow: 0 8px 25px rgba(45, 137, 199, 0.5);
+        }
+
+        .btn-secondary {
+            padding: 1rem 2rem;
+            background: white;
+            color: #2D89C7;
+            border: 2px solid #2D89C7;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transform: perspective(500px) translateZ(0);
+        }
+
+        .btn-secondary:hover {
+            background: #2D89C7;
+            color: white;
+            transform: perspective(500px) translateZ(20px);
+            box-shadow: 0 8px 20px rgba(45, 137, 199, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .services-hero h1 {
+                font-size: 2rem;
+            }
+
+            .services-hero p {
+                font-size: 1rem;
+            }
+
+            .section-header h2,
+            .services-cta h2 {
+                font-size: 1.75rem;
+            }
+
+            .main-services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="meditec_logo.png" alt="MT Engineering Logo">
+                    <span class="logo-text">MT Engineering</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link active">Services</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Services Hero -->
+    <section class="services-hero">
+        <div class="container">
+            <h1><i class="fas fa-cogs"></i> Our Services</h1>
+            <p>Comprehensive medical engineering solutions designed to transform healthcare infrastructure and improve patient care across Pakistan.</p>
+        </div>
+    </section>
+
+    <!-- Main Services -->
+    <section class="services-overview">
+        <div class="container">
+            <div class="section-header">
+                <h2>Core Medical Engineering Services</h2>
+                <p>End-to-end solutions for healthcare facilities, from design to installation and maintenance</p>
+            </div>
+
+            <div class="main-services-grid">
+                <!-- Service 1: Medical Gas Pipeline -->
+                <div class="main-service-card">
+                    <div class="service-card-header">
+                        <i class="fas fa-gas-pump"></i>
+                        <h3>Medical Gas Pipeline Systems</h3>
+                        <p>Complete infrastructure for medical gas distribution</p>
+                    </div>
+                    <div class="service-card-body">
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Design and installation of copper pipeline networks</li>
+                            <li><i class="fas fa-check-circle"></i> Oxygen, N2O, Medical Air, and Vacuum systems</li>
+                            <li><i class="fas fa-check-circle"></i> Color-coded outlet terminals and zone valves</li>
+                            <li><i class="fas fa-check-circle"></i> Area valve service units (AVSU)</li>
+                            <li><i class="fas fa-check-circle"></i> Gas alarm panels and monitoring systems</li>
+                            <li><i class="fas fa-check-circle"></i> ISO 7396-1 certified installations</li>
+                            <li><i class="fas fa-check-circle"></i> Pressure testing and quality assurance</li>
+                        </ul>
+                        <a href="contact.html" class="service-btn">
+                            <i class="fas fa-arrow-right"></i> Get Quote
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2: Oxygen Generation -->
+                <div class="main-service-card">
+                    <div class="service-card-header" style="background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);">
+                        <i class="fas fa-lungs"></i>
+                        <h3>Oxygen Generation Plants</h3>
+                        <p>PSA-based oxygen production systems</p>
+                    </div>
+                    <div class="service-card-body">
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Pressure Swing Adsorption (PSA) technology</li>
+                            <li><i class="fas fa-check-circle"></i> 93% ±3% oxygen purity guaranteed</li>
+                            <li><i class="fas fa-check-circle"></i> Capacity: 5 to 200+ LPM</li>
+                            <li><i class="fas fa-check-circle"></i> Automatic operation with PLC controls</li>
+                            <li><i class="fas fa-check-circle"></i> Low maintenance and energy efficient</li>
+                            <li><i class="fas fa-check-circle"></i> 24/7 continuous oxygen supply</li>
+                            <li><i class="fas fa-check-circle"></i> Complete installation and commissioning</li>
+                        </ul>
+                        <a href="contact.html" class="service-btn" style="background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);">
+                            <i class="fas fa-arrow-right"></i> Get Quote
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3: Modular OT -->
+                <div class="main-service-card">
+                    <div class="service-card-header" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                        <i class="fas fa-hospital"></i>
+                        <h3>Modular Operation Theaters</h3>
+                        <p>State-of-the-art surgical environments</p>
+                    </div>
+                    <div class="service-card-body">
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> HEPA H14 filtration systems</li>
+                            <li><i class="fas fa-check-circle"></i> Laminar air flow technology</li>
+                            <li><i class="fas fa-check-circle"></i> Antibacterial wall and ceiling panels</li>
+                            <li><i class="fas fa-check-circle"></i> Integrated control panels</li>
+                            <li><i class="fas fa-check-circle"></i> Temperature and humidity control</li>
+                            <li><i class="fas fa-check-circle"></i> Hermetically sealed doors</li>
+                            <li><i class="fas fa-check-circle"></i> Custom design and installation</li>
+                        </ul>
+                        <a href="contact.html" class="service-btn" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                            <i class="fas fa-arrow-right"></i> Get Quote
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 4: Air Compressor -->
+                <div class="main-service-card">
+                    <div class="service-card-header" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                        <i class="fas fa-fan"></i>
+                        <h3>Air Compressor Systems</h3>
+                        <p>Medical-grade compressed air solutions</p>
+                    </div>
+                    <div class="service-card-body">
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Oil-free air compressors</li>
+                            <li><i class="fas fa-check-circle"></i> Duplex and triplex configurations</li>
+                            <li><i class="fas fa-check-circle"></i> Air dryer and filtration systems</li>
+                            <li><i class="fas fa-check-circle"></i> Automatic control panels</li>
+                            <li><i class="fas fa-check-circle"></i> Backup system integration</li>
+                            <li><i class="fas fa-check-circle"></i> Energy-efficient operation</li>
+                            <li><i class="fas fa-check-circle"></i> Complete installation and testing</li>
+                        </ul>
+                        <a href="contact.html" class="service-btn" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                            <i class="fas fa-arrow-right"></i> Get Quote
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 5: Vacuum Systems -->
+                <div class="main-service-card">
+                    <div class="service-card-header" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
+                        <i class="fas fa-compress-arrows-alt"></i>
+                        <h3>Medical Vacuum Systems</h3>
+                        <p>Central vacuum for surgical and medical use</p>
+                    </div>
+                    <div class="service-card-body">
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Liquid ring vacuum pumps</li>
+                            <li><i class="fas fa-check-circle"></i> Bacterial filtration systems</li>
+                            <li><i class="fas fa-check-circle"></i> Automatic control and monitoring</li>
+                            <li><i class="fas fa-check-circle"></i> Emergency backup systems</li>
+                            <li><i class="fas fa-check-circle"></i> Suction injector and regulators</li>
+                            <li><i class="fas fa-check-circle"></i> Silent operation technology</li>
+                            <li><i class="fas fa-check-circle"></i> Complete piping and installation</li>
+                        </ul>
+                        <a href="contact.html" class="service-btn" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
+                            <i class="fas fa-arrow-right"></i> Get Quote
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 6: Ceiling Pendants -->
+                <div class="main-service-card">
+                    <div class="service-card-header" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
+                        <i class="fas fa-arrows-alt"></i>
+                        <h3>ICU & OT Ceiling Pendants</h3>
+                        <p>Advanced equipment mounting solutions</p>
+                    </div>
+                    <div class="service-card-body">
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Single and double arm designs</li>
+                            <li><i class="fas fa-check-circle"></i> 360° rotation capability</li>
+                            <li><i class="fas fa-check-circle"></i> Gas outlets and electrical sockets</li>
+                            <li><i class="fas fa-check-circle"></i> Equipment mounting rails</li>
+                            <li><i class="fas fa-check-circle"></i> LED surgical light integration</li>
+                            <li><i class="fas fa-check-circle"></i> Cable management systems</li>
+                            <li><i class="fas fa-check-circle"></i> Customizable configurations</li>
+                        </ul>
+                        <a href="contact.html" class="service-btn" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
+                            <i class="fas fa-arrow-right"></i> Get Quote
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Services -->
+    <section class="additional-services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Additional Services</h2>
+                <p>Comprehensive support and specialized solutions</p>
+            </div>
+
+            <div class="additional-grid">
+                <div class="additional-card">
+                    <div class="additional-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Maintenance & Repair</h3>
+                    <p>Preventive maintenance, emergency repairs, and 24/7 technical support for all medical engineering systems.</p>
+                </div>
+
+                <div class="additional-card">
+                    <div class="additional-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>Design & Consultation</h3>
+                    <p>Expert consultation and custom design services for new healthcare facilities and system upgrades.</p>
+                </div>
+
+                <div class="additional-card">
+                    <div class="additional-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>Quality Testing</h3>
+                    <p>Comprehensive testing and certification services to ensure compliance with international standards.</p>
+                </div>
+
+                <div class="additional-card">
+                    <div class="additional-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Training Programs</h3>
+                    <p>Staff training on system operation, safety protocols, and emergency procedures.</p>
+                </div>
+
+                <div class="additional-card">
+                    <div class="additional-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Custom Manufacturing</h3>
+                    <p>Design and manufacturing of customized medical equipment, SS trolleys, and healthcare furniture.</p>
+                </div>
+
+                <div class="additional-card">
+                    <div class="additional-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>System Upgrades</h3>
+                    <p>Modernization and upgrade of existing medical gas systems and healthcare infrastructure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Working Process</h2>
+                <p>From consultation to completion, we ensure excellence at every step</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Consultation</h3>
+                    <p>Free consultation to understand your requirements, facility layout, and specific needs.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Design & Planning</h3>
+                    <p>Custom design creation with detailed technical drawings and project planning.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Manufacturing</h3>
+                    <p>Precision manufacturing of components using high-quality materials and standards.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Installation</h3>
+                    <p>Professional installation by certified engineers with minimal disruption to operations.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Testing & Commissioning</h3>
+                    <p>Rigorous testing, quality checks, and system commissioning to international standards.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h3>Training & Support</h3>
+                    <p>Comprehensive staff training and ongoing maintenance support for optimal performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Medi Teck Engineering?</h2>
+                <p>We deliver excellence in every project</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <span class="benefit-icon"><i class="fas fa-certificate"></i></span>
+                    <h3>Certified Quality</h3>
+                    <p>All installations meet ISO standards and international healthcare regulations with certified quality assurance.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <span class="benefit-icon"><i class="fas fa-user-tie"></i></span>
+                    <h3>Expert Team</h3>
+                    <p>50+ certified engineers and technicians with extensive experience in medical engineering projects.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <span class="benefit-icon"><i class="fas fa-clock"></i></span>
+                    <h3>On-Time Delivery</h3>
+                    <p>95%+ on-time project completion rate with efficient project management and execution.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <span class="benefit-icon"><i class="fas fa-headset"></i></span>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock technical support and emergency maintenance services for all installed systems.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <span class="benefit-icon"><i class="fas fa-money-bill-wave"></i></span>
+                    <h3>Competitive Pricing</h3>
+                    <p>World-class quality at competitive prices with transparent costing and no hidden charges.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <span class="benefit-icon"><i class="fas fa-shield-alt"></i></span>
+                    <h3>Warranty & Guarantee</h3>
+                    <p>Comprehensive warranty coverage and performance guarantee on all products and installations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Served -->
+    <section class="industries">
+        <div class="container">
+            <div class="section-header">
+                <h2>Industries We Serve</h2>
+                <p>Trusted by healthcare facilities across Pakistan</p>
+            </div>
+
+            <div class="industries-grid">
+                <div class="industry-item">
+                    <i class="fas fa-hospital"></i>
+                    <h4>Hospitals</h4>
+                </div>
+                <div class="industry-item">
+                    <i class="fas fa-clinic-medical"></i>
+                    <h4>Clinics</h4>
+                </div>
+                <div class="industry-item">
+                    <i class="fas fa-procedures"></i>
+                    <h4>ICUs</h4>
+                </div>
+                <div class="industry-item">
+                    <i class="fas fa-procedures"></i>
+                    <h4>Operation Theaters</h4>
+                </div>
+                <div class="industry-item">
+                    <i class="fas fa-tooth"></i>
+                    <h4>Dental Clinics</h4>
+                </div>
+                <div class="industry-item">
+                    <i class="fas fa-x-ray"></i>
+                    <h4>Diagnostic Centers</h4>
+                </div>
+                <div class="industry-item">
+                    <i class="fas fa-flask"></i>
+                    <h4>Laboratories</h4>
+                </div>
+                <div class="industry-item">
+                    <i class="fas fa-building"></i>
+                    <h4>Healthcare Chains</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="services-cta">
+        <div class="container">
+            <h2>Ready to Upgrade Your Healthcare Facility?</h2>
+            <p>Get a free consultation and custom quote for your medical engineering project. Our experts are ready to help!</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn-primary">
+                    <i class="fas fa-envelope"></i> Request Free Quote
+                </a>
+                <a href="tel:+923212999899" class="btn-secondary">
+                    <i class="fas fa-phone"></i> +92 321 2999899
+                </a>
+                <a href="tel:+923212036416" class="btn-secondary">
+                    <i class="fas fa-phone-alt"></i> +92 321 2036416
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">MT Engineering</span>
+                    <p>Professional Medical Engineering Solutions</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/923212999899" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Medi Teck Engineering. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Vercel Analytics -->
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+
+    <!-- Vercel Speed Insights -->
+    <script>
+        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+
+    <script src="script.js"></script>
+
+    <!-- Scroll to Top Functionality -->
+    <script>
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

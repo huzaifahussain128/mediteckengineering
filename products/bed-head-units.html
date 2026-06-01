@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bed Head Units - Medi Teck Engineering</title>
+    <meta name="description" content="Modern, ergonomic bed head console panels integrated with gas outlets, electrical sockets, nurse call systems, and direct/indirect lighting.">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .detail-section {
+            padding: 5rem 0;
+            background: #f8fafc;
+        }
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        .detail-image {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid #e2e8f0;
+        }
+        .detail-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .detail-image:hover img {
+            transform: scale(1.05);
+        }
+        .detail-info {
+            padding: 1rem 0;
+        }
+        .breadcrumbs {
+            display: flex;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .breadcrumbs a {
+            color: #2D89C7;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+        .detail-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(45, 137, 199, 0.1);
+            color: #2D89C7;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .detail-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        .detail-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #475569;
+            margin-bottom: 2rem;
+        }
+        .detail-features-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        .detail-features-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2.5rem;
+        }
+        .detail-cta-container {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .cta-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+        .cta-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+        }
+        .cta-quote {
+            background: linear-gradient(135deg, #2D89C7 0%, #1a6ba3 100%);
+            color: white;
+        }
+        .cta-quote:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(45, 137, 199, 0.3);
+        }
+        
+        @media (max-width: 968px) {
+            .detail-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .detail-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="../meditec_logo.png" alt="MT Engineering Logo">
+                    <span class="logo-text">MT Engineering</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../services.html" class="nav-link">Services</a></li>
+                    <li><a href="../products.html" class="nav-link active">Products</a></li>
+                    <li><a href="../about.html" class="nav-link">About Us</a></li>
+                    <li><a href="../contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Hero -->
+    <section style="background: linear-gradient(135deg, rgba(45, 137, 199, 0.9) 0%, rgba(26, 107, 163, 0.9) 100%), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&h=400&fit=crop') center/cover; padding: 4rem 0; color: white;">
+        <div class="container">
+            <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem;">Bed Head Units</h2>
+            <div style="display: flex; gap: 0.5rem; font-size: 0.9rem; opacity: 0.9;">
+                <a href="../index.html" style="color: white; text-decoration: none;">Home</a> &gt; 
+                <a href="../products.html" style="color: white; text-decoration: none;">Products</a> &gt; 
+                <span>Bed Head Units</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detail Section -->
+    <section class="detail-section">
+        <div class="container">
+            <div class="detail-grid">
+                <!-- Product Image -->
+                <div class="detail-image">
+                    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800&h=600&fit=crop" alt="Bed Head Units" onerror="this.src='https://via.placeholder.com/600x400?text=No+Image'">
+                </div>
+
+                <!-- Product Info -->
+                <div class="detail-info">
+                    <span class="detail-badge">Medical Gases System</span>
+                    <span class="detail-badge" style="background: rgba(16, 185, 129, 0.1); color: #10b981; margin-left: 0.5rem;">Bed Head Units</span>
+                    <h1 class="detail-title">Bed Head Units</h1>
+                    <p class="detail-description">Modern, ergonomic bed head console panels integrated with gas outlets, electrical sockets, nurse call systems, and direct/indirect lighting.</p>
+                    
+                    <h3 class="detail-features-title">Technical Specifications & Features</h3>
+                    <ul class="detail-features-list">
+                        <li style='padding: 0.5rem 0; color: #475569; font-size: 0.95rem;'><i class='fas fa-check' style='color: #10b981; margin-right: 0.75rem;'></i>Extruded aluminum profiles</li><li style='padding: 0.5rem 0; color: #475569; font-size: 0.95rem;'><i class='fas fa-check' style='color: #10b981; margin-right: 0.75rem;'></i>Integrated gas & electric slots</li><li style='padding: 0.5rem 0; color: #475569; font-size: 0.95rem;'><i class='fas fa-check' style='color: #10b981; margin-right: 0.75rem;'></i>Sleek, low-profile design</li><li style='padding: 0.5rem 0; color: #475569; font-size: 0.95rem;'><i class='fas fa-check' style='color: #10b981; margin-right: 0.75rem;'></i>Direct/indirect LED lights</li>
+                    </ul>
+
+                    <div class="detail-cta-container">
+                        <a href="https://wa.me/923212999899?text=Hi!%20I'm%20interested%20in%20the%20Bed%20Head%20Units" class="cta-btn cta-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Inquiry via WhatsApp
+                        </a>
+                        <a href="../contact.html" class="cta-btn cta-quote">
+                            <i class="fas fa-file-invoice"></i> Request Catalog
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">MT Engineering</span>
+                    <p>Professional Medical Engineering Solutions</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/923212999899" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Medi Teck Engineering. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="../script.js"></script>
+    <script>
+        // Simple scroll to top button script
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
