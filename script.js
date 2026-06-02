@@ -80,25 +80,72 @@ window.addEventListener('scroll', () => {
 });
 
 // Contact Form Setup (Inert Visual UI Only)
-const contactForm = document.getElementById('contactForm');
-const submitBtn = document.getElementById('submitBtn');
-const formStatus = document.getElementById('formStatus');
-
-if (contactForm) {
-    // Disable inputs and submit button
-    const inputs = contactForm.querySelectorAll('input, textarea, select, button');
+// Contact Form Setup (Active)
+if (document.getElementById('contactForm')) {
+    // Ensure all inputs are enabled
+    const inputs = document.querySelectorAll('#contactForm input, #contactForm textarea, #contactForm select, #contactForm button');
     inputs.forEach(input => {
-        input.disabled = true;
+        input.disabled = false;
     });
-    
-    if (submitBtn) {
-        submitBtn.textContent = 'Form Disabled';
-        submitBtn.style.background = '#64748b'; // Slate gray to indicate disabled state
-        submitBtn.style.cursor = 'not-allowed';
+    // Initialize contact form handling (same as on contact page)
+    function initContactForm() {
+        const contactForm = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formMessage = document.getElementById('formMessage');
+        if (contactForm) {
+            const controls = contactForm.querySelectorAll('input, textarea, select, button');
+            controls.forEach(control => { control.disabled = false; });
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.style.background = ''; submitBtn.style.cursor = 'pointer'; }
+            if (formMessage) { formMessage.style.display = 'none'; }
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                submitBtn.disabled = true;
+                const originalBtnHtml = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                const formData = new FormData(contactForm);
+                const submitData = new FormData();
+                submitData.append('name', formData.get('fullName'));
+                submitData.append('email', formData.get('email'));
+                submitData.append('phone', formData.get('phone'));
+                submitData.append('subject', formData.get('subject'));
+                submitData.append('message', formData.get('message'));
+                fetch('submit-contact.php', { method: 'POST', body: submitData })
+                    .then(response => response.json())
+                    .then(data => {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnHtml;
+                        if (formMessage) {
+                            formMessage.style.display = 'block';
+                            formMessage.className = 'form-message';
+                            if (data.success) {
+                                formMessage.style.background = 'rgba(16, 185, 129, 0.1)';
+                                formMessage.style.color = '#10b981';
+                                formMessage.style.borderLeft = '4px solid #10b981';
+                                formMessage.innerHTML = `<i class="fas fa-check-circle"></i> ${data.message}`;
+                                contactForm.reset();
+                            } else {
+                                formMessage.style.background = 'rgba(239, 68, 68, 0.1)';
+                                formMessage.style.color = '#ef4444';
+                                formMessage.style.borderLeft = '4px solid #ef4444';
+                                formMessage.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${data.message}`;
+                            }
+                        }
+                    })
+                    .catch(err => {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnHtml;
+                        if (formMessage) {
+                            formMessage.style.display = 'block';
+                            formMessage.style.background = 'rgba(239, 68, 68, 0.1)';
+                            formMessage.style.color = '#ef4444';
+                            formMessage.style.borderLeft = '4px solid #ef4444';
+                            formMessage.innerHTML = `<i class="fas fa-exclamation-circle"></i> An error occurred. Please try again later.`;
+                        }
+                    });
+            });
+        }
     }
-    
-    // Show a clean, professional static info message
-    showFormStatus('Contact form submissions are disabled in this static demo version. Please reach out via WhatsApp or phone directly.', 'info');
+    initContactForm();
 }
 
 // Helper function to show form status
