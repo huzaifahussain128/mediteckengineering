@@ -117,6 +117,9 @@ if (document.getElementById('contactForm')) {
                         if (formMessage) {
                             formMessage.style.display = 'block';
                             formMessage.className = 'form-message';
+                            formMessage.style.padding = '1rem';
+                            formMessage.style.borderRadius = '8px';
+                            formMessage.style.marginTop = '1.5rem';
                             if (data.success) {
                                 formMessage.style.background = 'rgba(16, 185, 129, 0.1)';
                                 formMessage.style.color = '#10b981';
@@ -136,6 +139,10 @@ if (document.getElementById('contactForm')) {
                         submitBtn.innerHTML = originalBtnHtml;
                         if (formMessage) {
                             formMessage.style.display = 'block';
+                            formMessage.className = 'form-message';
+                            formMessage.style.padding = '1rem';
+                            formMessage.style.borderRadius = '8px';
+                            formMessage.style.marginTop = '1.5rem';
                             formMessage.style.background = 'rgba(239, 68, 68, 0.1)';
                             formMessage.style.color = '#ef4444';
                             formMessage.style.borderLeft = '4px solid #ef4444';

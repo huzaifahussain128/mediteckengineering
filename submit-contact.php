@@ -33,7 +33,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 // 1. Database Logging (SQLite)
-$db_file = '/home/mtengineR/leads.sqlite'; // cPanel production
+$db_file = '/home/mtengineering/leads.sqlite'; // cPanel production
 if (strpos(__DIR__, 'f:') === 0 || strpos(__DIR__, 'C:') === 0) {
     $db_file = __DIR__ . '/leads.sqlite'; // Local Windows development
 }
