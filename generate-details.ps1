@@ -504,7 +504,7 @@ foreach ($product in $products) {
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Medi Teck Engineering. All Rights Reserved.</p>
+                <p>&copy; 2026 Medi Teck Engineering. All Rights Reserved. | Founded by Huzaifa Hussain</p>
             </div>
         </div>
     </footer>

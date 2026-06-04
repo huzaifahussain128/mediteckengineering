@@ -3,3 +3,5 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/mtengineering/public_html
     - /bin/rsync -a --delete --exclude='.git' --exclude='.cpanel.yml' --exclude='generate-details.ps1' --exclude='package.json' --exclude='package-lock.json' --exclude='node_modules' . $DEPLOYPATH
+    - /bin/chmod 755 $DEPLOYPATH
+    - /bin/chmod 644 $DEPLOYPATH/.htaccess
