@@ -514,7 +514,7 @@ foreach ($product in $products) {
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script src="../script.js"></script>
+    <script src="../script.js?v=2.0"></script>
 </body>
 </html>
 "@
