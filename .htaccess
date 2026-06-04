@@ -3,6 +3,8 @@
 
 # Enable URL Rewriting
 RewriteEngine On
+# Exclude PHP scripts from rewrite
+RewriteRule ^(.*\.php)$ $1 [L]
 
 # Redirect to HTTPS (if SSL is enabled)
 RewriteCond %{HTTPS} off
